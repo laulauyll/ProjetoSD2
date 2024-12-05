@@ -1,9 +1,8 @@
 library ieee;
 use ieee.numeric_bit.all;
-use ieee.std_logic_1164.all;
-library synopsys;
--- textio
-use synopsys.std_logic_textio.all;
+use std.textio.all;
+--! Importing utils from working directory
+use work.utils.all;
 
 
 entity memorias_tb is
