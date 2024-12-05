@@ -4,9 +4,9 @@ use std.textio.all;
 
 entity memoriaDados is
     generic(
-      address_size : natural := 64;
-      word_size    : natural := 32;
-      data_file_name : string  := "conteudo_memDados_af11_p1e5_carga.dat"
+      address_size : natural := 8;
+      word_size    : natural := 64;
+      data_file_name : string := "conteudo_memDados_af11_p1e5_carga.dat"
     );
     port(
       ck, wr : in  bit;
