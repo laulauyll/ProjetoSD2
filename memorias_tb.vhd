@@ -1,6 +1,10 @@
 library ieee;
 use ieee.numeric_bit.all;
-use work.utils.all;
+use ieee.std_logic_1164.all;
+library synopsys;
+-- textio
+use synopsys.std_logic_textio.all;
+
 
 entity memorias_tb is
 end memorias_tb;
