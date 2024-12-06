@@ -14,6 +14,7 @@ package utils is
   -- Support comparison functions
   function equal(a,b: std_logic_vector) return boolean;
   function equalSignedBitvector(a: signed; b: bit_vector) return boolean;
+  function to_bv(n, size : natural) return bit_vector;
 end utils;
 
 package body utils is
@@ -63,5 +64,24 @@ package body utils is
       return false;
     end if;
   end function;
+
+  function to_bv(n, size : natural) return bit_vector is
+
+    type bv_arr_t is array (0 to 2 ** size - 1) of bit_vector(size - 1 downto 0);
+  
+    function bv_arr_init(size : natural) return bv_arr_t is
+      variable res_v : bv_arr_t;
+    begin
+      for i in 0 to 2 ** size - 1 loop
+        res_v(i) := bit_vector(TO_UNSIGNED(i, size));
+      end loop;
+      return res_v;
+    end function;
+  
+    constant LUT : bv_arr_t := bv_arr_init(size);
+  
+  begin
+    return LUT(n);
+  end to_bv;
 
 end utils;

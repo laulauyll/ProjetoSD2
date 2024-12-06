@@ -1,0 +1,13 @@
+v 4
+file . "memorias_tb.vhd" "bafe841f995727b269a82e392c42ccf87c6efb18" "20241205235756.331":
+  entity memorias_tb at 1( 0) + 0 on 53;
+  architecture testbench of memorias_tb at 11( 150) + 0 on 54;
+file . "memoriaDados.vhd" "2b02c329dc7cf3f6e4509e8c9ed8636a765f786a" "20241205235756.311":
+  entity memoriadados at 1( 0) + 0 on 49;
+  architecture vendorfree of memoriadados at 19( 473) + 0 on 50;
+file . "memoriaInstrucoes.vhd" "3f5752454a906e4976c7f260717522ef270f1207" "20241205235756.304":
+  entity memoriainstrucoes at 1( 0) + 0 on 47;
+  architecture vendorfree of memoriainstrucoes at 17( 458) + 0 on 48;
+file . "utils.vhd" "1ab52f3a2559deea6bd067c25737a3ef6066ea0e" "20241205235756.321":
+  package utils at 1( 0) + 0 on 51 body;
+  package body utils at 20( 831) + 0 on 52;

@@ -6,6 +6,8 @@ use work.utils.all;  -- Importa o pacote utils
 entity memorias_tb is
 end memorias_tb;
 
+
+
 architecture testbench of memorias_tb is
   component memoriaInstrucoes is
     generic(
@@ -54,13 +56,21 @@ begin
     wr <= '0';
     --! Escrevendo um padrão na RAM
     for i in 0 to 31 loop
-      addr_tmp := bit_vector(to_unsigned(i, 8));  -- Ajuste para corresponder ao tamanho do endereço
-      d4ci <= (others => '0');  -- Inicialize d4ci com zeros
+      addr_tmp := to_bv(i, 8);  -- Ajuste para corresponder ao tamanho do endereço      
+      d4ci <= (63 downto addr_tmp'length => '0') & addr_tmp;
       a5 <= addr_tmp;
-      wr <= '1';
-      wait until rising_edge(clk);
-      wr <= '0';
+      wr<='1';
+      wait until (clk'event and clk='1');
+      wr<='0';
     end loop;
+    --! Lendo todas as memórias
+    for i in 0 to 31 loop
+      a5 <= to_bv(i, 8);  -- Ajuste para corresponder ao tamanho do endereço
+      wait for 1 ns;
+      assert d4co = (63 downto a5'length => '0') & a5;
+        report "RAM mem("&to_bstring(a5)&")="&to_bstring(d4co);
+    end loop;
+    stopc <= '0';
     wait;
   end process;
 end architecture testbench;
