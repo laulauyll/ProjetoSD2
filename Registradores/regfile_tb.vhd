@@ -159,6 +159,7 @@ begin
     simulando <= '1';
     -- 1. Verificacao do Reset
     caso <= 1;
+    report integer'image(caso);
     -- valores iniciais
     rr1 <= "00000"; rr2 <= "00000"; wr <= "00000"; ld <= '0';
     d <= X"FFFFFFFFFFFFFFFF";
