@@ -64,8 +64,9 @@ begin
     --! Lendo todas as memórias
     for i in 0 to 31 loop
       a5 <= to_bv(i, 8);  -- Ajuste para corresponder ao tamanho do endereço
+      wait until (clk'event and clk='1');
       wait for 1 ns;
-      assert d4co = (63 downto a5'length => '0') & a5;
+      assert d4co = (63 downto 8 => '0') & to_bv(i, 8)  -- Ajuste para corresponder ao tamanho da palavra
         report "RAM mem("&to_bstring(a5)&")="&to_bstring(d4co);
     end loop;
     stopc <= '0';
