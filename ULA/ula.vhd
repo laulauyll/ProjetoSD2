@@ -1,6 +1,6 @@
 library ieee;
 use ieee.numeric_bit.all;
-use work.ula1bit.all;
+use work.ula1bit.all; -- importa a entidade ula1bit do arquivo ula1bit.vhd (deve estar no mesmo diretório)
 
 --
 -- descrição comportamental da ULA
@@ -30,6 +30,10 @@ entity ula is
         carryOut: out bit
     );
 end entity ula;
+
+--
+-- descrição estrutural da ULA
+--
 
 architecture struct of ula is
     signal invertA, invertB: bit;
