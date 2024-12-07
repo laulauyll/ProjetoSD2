@@ -7,8 +7,7 @@ entity reg is
         clock, reset: in bit;
         enable: in bit;
         d: in bit_vector(wordSize-1 downto 0);
-        q: out bit_vector(wordSize-1 downto 0);
-        q2: out bit_vector(wordSize-1 downto 0)
+        q: out bit_vector(wordSize-1 downto 0)
     );
 end entity reg;
 
@@ -24,6 +23,5 @@ begin
       end if;
     end if;
   end process;
-  q2 <= q;
 end architecture rtl;
 
