@@ -14,14 +14,16 @@ end entity reg;
 architecture rtl of reg is
 begin
   process(clock, reset)
+  variable q_var: bit_vector(wordSize-1 downto 0);
   begin
     if reset = '1' then
-      q <= (others => '0');
+      q_var := (others => '0');
     elsif clock'event and clock = '1' then
       if enable = '1' then
-        q <= d;
+        q_var := d;
       end if;
     end if;
+    q <= q_var;
   end process;
-end architecture rtl;
 
+end architecture rtl;

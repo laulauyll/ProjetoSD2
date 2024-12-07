@@ -32,19 +32,19 @@ architecture estrutural of regfile is
 
     component decodificador_5x32 is
         port(
-            sel: in bit_vector(addressSize-1 downto 0);
-            saida: out bit_vector(wordSize-1 downto 0)
+            sel: in bit_vector(4 downto 0);
+            saida: out bit_vector(31 downto 0)
         );
     end component decodificador_5x32;
 
-    component mux is
+    component mux_32x1_n is
         generic(BITS: integer := 64);
         port(
             D0, D1, D2, D3, D4, D5, D6, D7, D8, D9, D10, D11, D12, D13, D14, D15, D16, D17, D18, D19, D20, D21, D22, D23, D24, D25, D26, D27, D28, D29, D30, D31: in bit_vector(BITS-1 downto 0);
             SEL: in bit_vector(addressSize-1 downto 0);
             SAIDA: out bit_vector(BITS-1 downto 0)
         );
-    end component mux;
+    end component mux_32x1_n;
 
     signal s_decod: bit_vector(2**addressSize-1 downto 0);
     signal s_enable: bit_vector(2**addressSize-1 downto 0);
@@ -75,7 +75,7 @@ begin
             clock => clock,
             reset => reset,
             enable => s_enable(2**addressSize-1),
-            d => "00000000000000000000000000000000",
+            d => "0000000000000000000000000000000000000000000000000000000000000000",
             q => regfile_signal(2**addressSize-1)
         );
 
@@ -85,7 +85,7 @@ begin
             saida => s_decod
         );
 
-    mux1: mux
+    mux1: mux_32x1_n
         port map(
             D0 => regfile_signal(0),
             D1 => regfile_signal(1),
@@ -123,7 +123,7 @@ begin
             SAIDA => mux1_signal
         );
     
-    mux2: mux
+    mux2: mux_32x1_n
         port map(
             D0 => regfile_signal(0),
             D1 => regfile_signal(1),

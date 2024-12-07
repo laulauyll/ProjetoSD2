@@ -8,7 +8,7 @@
 entity decodificador_5x32 is
     port (
         sel   : in  bit_vector (4 downto 0);
-        saida : out bit_vector (32 downto 0)
+        saida : out bit_vector (31 downto 0)
     );
 end entity;
 

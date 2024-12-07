@@ -6,8 +6,6 @@ use work.utils.all;  -- Importa o pacote utils
 entity memorias_tb is
 end memorias_tb;
 
-
-
 architecture testbench of memorias_tb is
   component memoriaInstrucoes is
     generic(
