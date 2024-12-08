@@ -1,9 +1,7 @@
--------------------------------------------------------
---! @file decodificador_3x8.vhd
---! @author emidorik@usp.br
---! @date 20231117
---! @brief decoder 3-to-8
--------------------------------------------------------
+
+library ieee;
+use ieee.numeric_bit.ALL;
+use std.textio.all;
 
 entity decodificador_5x32 is
     port (

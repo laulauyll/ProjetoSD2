@@ -1,9 +1,4 @@
---------------------------------------------------------------------------------
---! @file   rom.vhd
---! @brief  Parametrisable ROM memory
---! @author Bruno Albertini (balbertini@usp.br)
---! @date   20190606
---------------------------------------------------------------------------------
+
 library ieee;
 use ieee.numeric_bit.ALL;
 use std.textio.all;

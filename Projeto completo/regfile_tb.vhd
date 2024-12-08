@@ -1,7 +1,4 @@
---------------------------------------------------------------------------------
--- pacote com funcoes uteis para bit_vector (Prof. Bruno Albertini)
---------------------------------------------------------------------------------
---
+
 library ieee;
 use ieee.std_logic_1164.all;
 use ieee.numeric_bit.all;

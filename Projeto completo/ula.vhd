@@ -2,6 +2,7 @@ library ieee;
 use ieee.numeric_bit.all;
 use work.ula1bit.all;
 
+
 --
 -- descrição comportamental da ULA
 --

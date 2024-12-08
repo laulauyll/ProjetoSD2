@@ -1,9 +1,4 @@
--------------------------------------------------------
---! @file memorias.vhd
---! @brief TB para memorias em VHDL
---! @author Bruno Albertini (balbertini@usp.br)
---! @date 20190606
--------------------------------------------------------
+
 library ieee;
 use ieee.numeric_bit.all;
 use work.utils.all;

@@ -1,9 +1,4 @@
---------------------------------------------------------------------------------
---! @file   rom32x4.vhd
---! @brief  ROM memory, 32 words of 4 bits
---! @author Bruno Albertini (balbertini@usp.br)
---! @date 20190606
---------------------------------------------------------------------------------
+
 library ieee;
 use ieee.numeric_bit.ALL;
 --! textio is needed to read files in VHDL

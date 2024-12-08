@@ -1,9 +1,3 @@
--------------------------------------------------------
---! @file mux_8x1_n.vhd
---! @author emidorik@usp.br
---! @date 20231117
---! @brief multiplexer 8x1 with generic data size
--------------------------------------------------------
 
 entity mux_32x1_n is
   generic (
